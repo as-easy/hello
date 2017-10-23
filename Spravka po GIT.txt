@@ -4,36 +4,66 @@ __Настройка (Логин и почта на github.com)
 git config --global user.name "as-easy"
 git config --global user.email varankinva@yandex.ru
 
+
 __Создание папки/переход в папку:  
 $ mkdir Desktop/git_exercise/
 $ cd Desktop/git_exercise/
 
+
 __Инициализация git (при этом в папке создастся файл .git, если репозиторий был пуст)
 $ git init
+
 
 __Узнать статус  (актуальная информация о репозитория, вдруг что поменялось)
 $ git status
 
-__Добавление в git существующего файла/всех файлов (использовать когда в локальной папке появляются новые файлы)
+
+__Добавление в git существующего файла/всех файлов (использовать когда в локальной папке изменяются файлы)
 $ git add hello.txt
 $ git add -A
 
-__Коммит(фиксация изменений)
-$ git commit -m "Комментарий коммита на Англ."
+
+__Коммит(фиксация изменений) !!перед коммитом обязательно добавляем изменения git add
+$ git commit -m "Комментарий коммита"
+
 
 __Подключение к удаленному репозиторию (до этого изменяли локально, потом надо отправить на удаленный репозиторий)
 $ git remote add origin https://github.com/as-easy/hello
+
 
 __Изменения пути origin.
 git remote set-url origin git@github.com:vicman-wi/wi-backend.git
 или Отредактировать файл .git/config: секция [remote "origin"] параметр - url. 
 
+
 __Отправка изменений на сервер
 git push -u origin master
+
 
 __Клонирование чьего-то репозитория
 git clone https://github.com/kirillurgant/equalizer
 
+
 __Запрос и скачивание изменений с сервера (качает файлы, которых нет в локальной папке)
 git pull origin master
+
+
+__Создание новой ветки
+$ git branch new_feature
+
+
+__Узнать список ветвей
+$ git branch
+new_feature   -  наименование веток
+* master
+
+
+__Переключение между ветками
+$ git checkout new_feature
+
+
+__Слияние веток  (Перед этим перейти на ветку master: git checkout master)
+$ git merge new_feature
+
+
 
